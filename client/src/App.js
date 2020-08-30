@@ -9,7 +9,7 @@ function App() {
           Spanish for medical professionals
         </p>
         <a href="#">
-          Coming Soon!
+          Test!
         </a>
       </header>
     </div>
