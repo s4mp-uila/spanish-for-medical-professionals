@@ -1,19 +1,13 @@
 import React from 'react';
+import Navigation from "./Components/Navigation/Navigation"
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Spanish for medical professionals
-        </p>
-        <a href="#">
-          Test!
-        </a>
-      </header>
+      <Navigation />
     </div>
-  );
+  )
 }
 
 export default App;
