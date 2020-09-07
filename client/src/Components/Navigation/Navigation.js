@@ -4,16 +4,15 @@ import {StateContext} from "../Context/GlobalState"
 import "./Navigation.css"
 
 function Navigation() {
-    const {login} = useContext(StateContext)
-    
-    
+    const {tempName,login,user,Logout} = useContext(StateContext)
+
     return (
         <nav>
             <Link to="/" style ={login?{color:"red"}:{color:"green"}}>Home</Link>
             <Link to="/courses">Courses</Link>
             <Link to="/about">About Us</Link>
             <Link to="/teacher">Hire a Teacher</Link>
-            {login ? <Link to="/login">Logout</Link> : <Link to="/login">Login / Sign up</Link> }
+            {login ? <Link onClick={Logout} to="/login">Welcome {tempName} / Logout</Link> : <Link to="/login">Login / Sign up</Link> }
         </nav>
     )
 }
