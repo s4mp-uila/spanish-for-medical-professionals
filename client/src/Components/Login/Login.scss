@@ -12,7 +12,7 @@ input {
         font-size: 18px;
       }
   }
-  button {
+button {
     display: block;
     margin: auto;
     position: relative;
@@ -29,6 +29,13 @@ input {
         top: -3px;
         cursor: pointer;
       }
-  }
+}
+.warning {
+  text-align: center;
+  color: red;
+  margin: 0px;
+  visibility: hidden;
+}
+
   
   

@@ -1,8 +1,8 @@
 nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 35% 10% 10% 10% 35%;
-      grid-template-columns: 35% 10% 10% 10% 35%;
+  -ms-grid-columns: 35% 10% 10% 10% 25% 10%;
+      grid-template-columns: 35% 10% 10% 10% 25% 10%;
   text-align: center;
   margin: 2%;
 }
@@ -17,5 +17,16 @@ nav a {
 nav a:hover {
   color: white;
   text-shadow: 2px 2px 4px #000000;
+}
+
+nav a:first-child {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  padding-left: 10%;
+}
+
+nav a:nth-child(5) {
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 /*# sourceMappingURL=Navigation.css.map */

@@ -6,6 +6,7 @@ import Courses from "./Components/Courses/Courses"
 import Home from "./Components/Home/Home"
 import Teacher from "./Components/Teacher/Teacher"
 import Login from "./Components/Login/Login"
+import LoginCheck from "./Components/LoginCheck/LoginCheck"
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about"><About /></Route>
         <Route path="/courses"><Courses /></Route>
         <Route path="/login"><Login /></Route>
+        <Route path="/loginCheck"><LoginCheck /></Route>
         <Route path="/teacher"><Teacher /></Route>
       </Switch>
     </div>

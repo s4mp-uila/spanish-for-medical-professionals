@@ -5,7 +5,7 @@ import "./Login.css"
 
  function Signup(props) {
 
-  const {firstName,email, password, handleChangeEmail, handleChangePassword, handleChangeFirstName, Save,login} = useContext(StateContext)
+  const {firstName,email, password, handleChangeEmail, handleChangePassword, handleChangeFirstName, Save,login, matching} = useContext(StateContext)
 
   const history = useHistory();
   
@@ -13,6 +13,7 @@ import "./Login.css"
     <div>
     {login ? history.push("/") : null }
       <h1> Sign Up Here </h1>
+      <p style = {matching ? {visibility:"visible"} : {visibility:"hidden"}} className="warning">This email is already taken</p>
       <form>
         <input placeholder="First Name" type="text" value={firstName} onChange={handleChangeFirstName}/>
         <input placeholder="Email Address" type="email" value={email} onChange={handleChangeEmail}/>

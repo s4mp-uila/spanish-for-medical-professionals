@@ -1,13 +1,15 @@
-import React, {Component, useState} from "react"
+import React, {useState} from "react"
 const StateContext = React.createContext()
 
 function StateContextProvider(props) {
-    const [login, setLogin] = useState(false)
+    const [login, setLogin] = useState(null)
     const [user, setUser] = useState([])
     const [firstName, setFirstName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [tempName, setTempName] = useState("")
+    const [matching, setMatching] = useState(false)
+    
 
 
     function handleChangeFirstName(event) {
@@ -27,14 +29,38 @@ function StateContextProvider(props) {
     
     function Save(event) {
         event.preventDefault()
-        toggleLogin()
-        // let users = JSON.parse(localStorage.getItem("user"))
-        localStorage.setItem("user", JSON.stringify([...user,[firstName, email, password]]));
-        setUser([...user, [firstName,email,password]])
+        
+        let existing = JSON.parse(localStorage.getItem("user"))
+        let tempMatch = ""
+        if (existing !== null && existing.some(item=>item[1]===email) ) {
+            setMatching(true)
+            tempMatch = true
+        } else {setMatching(false) }
+        
+        if (!tempMatch) {
+            localStorage.setItem("user", JSON.stringify([...user,[firstName, email, password]]))
+            setUser([...user, [firstName,email,password]])
+            toggleLogin()
+        } 
+        
         setFirstName("")
         setEmail("")
         setPassword("")
+
     }
+
+    function Check(event) {
+        event.preventDefault()
+        let existing = JSON.parse(localStorage.getItem("user"))
+        if (existing !== null && existing.some(item=>item[1]===email && item[2]===password) ) {
+            toggleLogin()
+        }
+        setEmail("")
+        setPassword("")
+        
+    }
+
+    
     
     function Logout(event) {
         event.preventDefault()
@@ -44,7 +70,7 @@ function StateContextProvider(props) {
 
     return (
         <StateContext.Provider value={{login, toggleLogin, user, tempName, firstName, email, password, 
-        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Logout}}>
+        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching}}>
             {props.children}
         </StateContext.Provider>
     )

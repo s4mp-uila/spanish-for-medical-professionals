@@ -49,4 +49,11 @@ button:hover {
   top: -3px;
   cursor: pointer;
 }
+
+.warning {
+  text-align: center;
+  color: red;
+  margin: 0px;
+  visibility: hidden;
+}
 /*# sourceMappingURL=Login.css.map */
