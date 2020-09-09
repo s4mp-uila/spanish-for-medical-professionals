@@ -1,6 +1,6 @@
 nav {
     display: grid;
-    grid-template-columns: 35% 10% 10% 10% 35%;
+    grid-template-columns: 35% 10% 10% 10% 25% 10%;
     text-align: center;
     margin: 2%;
     a {
@@ -11,6 +11,13 @@ nav {
         &:hover {
             color: white;
             text-shadow: 2px 2px 4px #000000;
+        }
+        &:first-child {
+            justify-self: start;
+            padding-left: 10%;
+        }
+        &:nth-child(5) {
+            justify-self: end;
         }
     }
 }
