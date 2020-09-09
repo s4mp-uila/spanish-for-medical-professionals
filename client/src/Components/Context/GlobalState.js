@@ -32,14 +32,14 @@ function StateContextProvider(props) {
         
         let existing = JSON.parse(localStorage.getItem("user"))
         let tempMatch = ""
-        if (existing !== null && existing.some(item=>item[1]===email) ) {
+        if (existing !== null && existing.some(item=>item.email===email) ) {
             setMatching(true)
             tempMatch = true
         } else {setMatching(false) }
         
         if (!tempMatch) {
-            localStorage.setItem("user", JSON.stringify([...user,[firstName, email, password]]))
-            setUser([...user, [firstName,email,password]])
+            localStorage.setItem("user", JSON.stringify([...user,{firstName, email, password}]))
+            setUser([...user, {firstName,email,password}])
             toggleLogin()
         } 
         
@@ -52,7 +52,7 @@ function StateContextProvider(props) {
     function Check(event) {
         event.preventDefault()
         let existing = JSON.parse(localStorage.getItem("user"))
-        if (existing !== null && existing.some(item=>item[1]===email && item[2]===password) ) {
+        if (existing !== null && existing.some(item=>item.email===email && item.password===password) ) {
             toggleLogin()
         }
         setEmail("")
