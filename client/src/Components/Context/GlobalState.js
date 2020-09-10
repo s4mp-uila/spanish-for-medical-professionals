@@ -61,7 +61,6 @@ function StateContextProvider(props) {
     }
 
     
-    
     function Logout(event) {
         event.preventDefault()
         toggleLogin()
