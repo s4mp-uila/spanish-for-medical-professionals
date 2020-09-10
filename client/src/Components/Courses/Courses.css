@@ -1,1 +1,26 @@
-/* No CSS *//*# sourceMappingURL=Courses.css.map */
+.courseContainer {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 60px;
+  margin-top: 10%;
+}
+
+.courseContainer .courseCard {
+  margin: auto;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 9px;
+  width: 30%;
+  height: 100px;
+  text-align: center;
+  font-size: larger;
+  line-height: 100px;
+  -webkit-box-shadow: 0px 4px 15px #070707;
+          box-shadow: 0px 4px 15px #070707;
+}
+
+.courseContainer .courseCard:hover {
+  top: -3px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Courses.css.map */
