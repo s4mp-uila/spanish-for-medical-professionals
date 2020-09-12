@@ -1,7 +1,7 @@
 import React,{useContext} from "react"
 import {Link} from "react-router-dom"
 import {StateContext} from "../Context/GlobalState"
-import "./Navigation.css"
+import "./Navigation.scss"
 
 function Navigation() {
     const {tempName,login,Logout} = useContext(StateContext)
