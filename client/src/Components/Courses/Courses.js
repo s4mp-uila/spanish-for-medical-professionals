@@ -1,7 +1,7 @@
 import React,{useContext} from "react"
 import {Link} from "react-router-dom"
 import {StateContext} from "../Context/GlobalState"
-import "./Courses.css"
+import "./Courses.scss"
 
 function Courses() {
 

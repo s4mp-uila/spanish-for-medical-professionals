@@ -1,5 +1,5 @@
 import React from "react"
-import "./Teacher.css"
+import "./Teacher.scss"
 
 function Teacher() {
 

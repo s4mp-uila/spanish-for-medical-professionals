@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import {useHistory} from "react-router-dom"
 import {StateContext} from "../Context/GlobalState"
-import "../Login/Login.css"
+import "../Login/Login.scss"
 
  function LoginCheck(props) {
 
