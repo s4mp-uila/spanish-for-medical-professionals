@@ -8,7 +8,7 @@ function Game(props) {
   const history = useHistory();
   function toMain(e) {
     e.preventDefault()
-    history.push("/")
+    history.push(props.url)
   }
 
   return (

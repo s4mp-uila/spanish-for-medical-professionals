@@ -2,13 +2,13 @@ import React from "react"
 import Video from "../CourseChildren/Video"
 import "../Courses.scss"
 
-function Video1() {
+function Video1(props) {
 
   
 
   return (
     <div>
-      <Video>
+      <Video urlGame = "/course1/game1" urlHome="/course1/">
       <iframe 
         title="spanishVideo"
         width="560" 

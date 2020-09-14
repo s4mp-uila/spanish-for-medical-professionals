@@ -8,11 +8,11 @@ function Video(props) {
   const history = useHistory();
   function toGame(e) {
     e.preventDefault()
-    history.push("/game")
+    history.push(props.urlGame)
   }
   function toMain(e) {
     e.preventDefault()
-    history.push("/")
+    history.push(props.urlHome)
   }
 
   return (
