@@ -1,6 +1,6 @@
 import React from "react"
 import Video from "../CourseChildren/Video"
-import "../Courses.css"
+import "../Courses.scss"
 
 function Video1() {
 

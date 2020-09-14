@@ -1,6 +1,6 @@
 import React from "react"
 import Game from "../CourseChildren/Game"
-import "../Courses.css"
+import "../Courses.scss"
 
 function Game1() {
 

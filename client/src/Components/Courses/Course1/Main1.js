@@ -1,6 +1,6 @@
 import React from "react"
 import Main from "../CourseChildren/Main"
-import "../Courses.css"
+import "../Courses.scss"
 
 function Main1(props) {
 

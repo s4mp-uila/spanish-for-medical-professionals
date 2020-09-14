@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom"
 import Main1 from "./Main1"
 import Video1 from "./Video1"
 import Game1 from "./Game1"
-import "../Courses.css"
+import "../Courses.scss"
 
 
 function Course1() {
