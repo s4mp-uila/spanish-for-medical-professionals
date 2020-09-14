@@ -17,8 +17,10 @@ function Game(props) {
         <progress value="100" max="100"></progress>
       </div>
         {props.children}
-      <button onClick={toMain} className="cancel">Cancel</button>
-      <button onClick={toMain} className="next">Done</button>
+      <div className="buttonContainer">
+        <button onClick={toMain} className="cancel">Cancel</button>
+        <button onClick={toMain} className="next">Next</button>
+      </div> 
     </div>
     
   )

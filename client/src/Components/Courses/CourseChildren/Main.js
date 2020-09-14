@@ -17,8 +17,10 @@ function Main(props) {
       <progress value="33" max="100"></progress>
       </div>
         {props.children}
+      <div className="buttonContainer">
         <button className="cancel">Cancel</button>
         <button onClick={toVideo} className="next">Next</button>
+      </div> 
     </div>
   )
   

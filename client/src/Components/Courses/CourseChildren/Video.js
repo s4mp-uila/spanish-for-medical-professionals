@@ -21,8 +21,10 @@ function Video(props) {
         <progress value="66" max="100"></progress>
       </div>
         {props.children}
-      <button onClick={toMain} className="cancel">Cancel</button>
-      <button onClick={toGame} className="next">Next</button>
+      <div className="buttonContainer">
+        <button onClick={toMain} className="cancel">Cancel</button>
+        <button onClick={toGame} className="next">Next</button>
+      </div> 
     </div>
     
   )
