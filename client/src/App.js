@@ -7,7 +7,7 @@ import Home from "./Components/Home/Home"
 import Teacher from "./Components/Teacher/Teacher"
 import Login from "./Components/Login/Login"
 import LoginCheck from "./Components/LoginCheck/LoginCheck"
-import './App.css';
+import './App.scss';
 
 function App() {
 

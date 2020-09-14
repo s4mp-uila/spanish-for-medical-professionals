@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import {useHistory} from "react-router-dom"
 import {StateContext} from "../Context/GlobalState"
-import "./Login.css"
+import "./Login.scss"
 
  function Signup(props) {
 
