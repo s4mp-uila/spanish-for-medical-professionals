@@ -7,9 +7,9 @@ import Home from "./Components/Home/Home"
 import Teacher from "./Components/Teacher/Teacher"
 import Login from "./Components/Login/Login"
 import LoginCheck from "./Components/LoginCheck/LoginCheck"
-import Course1 from "./Components/Courses/Course1"
-import Course2 from "./Components/Courses/Course2"
-import Course3 from "./Components/Courses/Course3"
+import Course1 from "./Components/Courses/Course1/Course1"
+import Course2 from "./Components/Courses/Course2/Course2"
+import Course3 from "./Components/Courses/Course3/Course3"
 import {StateContext} from "./Components/Context/GlobalState"
 import './App.css';
 
