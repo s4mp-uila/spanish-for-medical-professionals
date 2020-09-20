@@ -10,7 +10,31 @@ function StateContextProvider(props) {
     const [tempName, setTempName] = useState("")
     const [matching, setMatching] = useState(false)
     
-
+    const CoursesData = [
+        {
+            id:1,
+            urlVideo:"/course1/video",
+            urlGame:"/course1/game",
+            urlHome:"/course1/",
+            h1:"SpanishForProfessionals",
+            h3:"Learning Spanish with <b>SpanishForProfessionals</b> is entirely free. We are available for classroom or home with dozens of games, coloring pages and interactive activities ordered by levels that you can access anytime in tablets or desktops.",
+            p:"After completion of each part, just click on the NEXT button to go forward",
+            VideoSrc:"https://www.youtube.com/embed/t7-nb1wlnyA",
+            ImgSrc:"https://bit.ly/2QjsSnr"
+        },
+        {
+            id:2,
+            urlVideo:"/course2/video",
+            urlGame:"/course2/game",
+            urlHome:"/course2/"
+        },
+        {
+            id:3,
+            urlVideo:"/course3/video",
+            urlGame:"/course3/game",
+            urlHome:"/course3/"
+        }
+    ]
 
     function handleChangeFirstName(event) {
         setFirstName(event.target.value)
@@ -69,7 +93,7 @@ function StateContextProvider(props) {
 
     return (
         <StateContext.Provider value={{login, toggleLogin, user, tempName, firstName, email, password, 
-        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching}}>
+        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching,CoursesData}}>
             {props.children}
         </StateContext.Provider>
     )

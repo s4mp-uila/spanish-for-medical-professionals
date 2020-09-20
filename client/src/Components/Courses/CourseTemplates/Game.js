@@ -3,13 +3,9 @@ import {useHistory} from "react-router-dom"
 import "../Courses.scss"
 
 
-function Video(props) {
+function Game(props) {
 
   const history = useHistory();
-  function toGame(e) {
-    e.preventDefault()
-    history.push(props.urlGame)
-  }
   function toMain(e) {
     e.preventDefault()
     history.push(props.urlHome)
@@ -18,12 +14,12 @@ function Video(props) {
   return (
     <div className="main">
       <div className="progressBar">
-        <progress value="66" max="100"></progress>
+        <progress value="100" max="100"></progress>
       </div>
-        {props.children}
+      <img alt="Spanish Game" src={props.ImgSrc}/>
       <div className="buttonContainer">
         <button onClick={toMain} className="cancel">Cancel</button>
-        <button onClick={toGame} className="next">Next</button>
+        <button onClick={toMain} className="next">Next</button>
       </div> 
     </div>
     
@@ -31,4 +27,4 @@ function Video(props) {
   
 }
 
-export default Video
+export default Game

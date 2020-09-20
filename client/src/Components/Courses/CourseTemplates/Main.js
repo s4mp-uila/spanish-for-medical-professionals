@@ -8,7 +8,7 @@ function Main(props) {
   const history = useHistory();
     function toVideo(e) {
       e.preventDefault()
-      history.push(props.url)
+      history.push(props.urlVideo)
     }
 
   return (
@@ -16,7 +16,9 @@ function Main(props) {
       <div className="progressBar">
       <progress value="33" max="100"></progress>
       </div>
-        {props.children}
+      <h1>{props.h1}</h1>
+      <h3>{props.h3}</h3>
+      <p>{props.p}</p>
       <div className="buttonContainer">
         <button className="cancel">Cancel</button>
         <button onClick={toVideo} className="next">Next</button>

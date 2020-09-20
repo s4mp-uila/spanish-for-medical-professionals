@@ -1,22 +1,25 @@
-import React from "react"
+import React,{useContext} from "react"
 import { Switch, Route } from "react-router-dom"
-import Main2 from "./Main2"
-import Video2 from "./Video2"
-import Game2 from "./Game2"
+import Main from "../CourseTemplates/Main"
+import Video from "../CourseTemplates/Video"
+import Game from "../CourseTemplates/Game"
+import {StateContext} from "../../Context/GlobalState"
 import "../Courses.scss"
 
 
 function Course2() {
-
+    const {CoursesData} = useContext(StateContext)
     return (
        <div>
+          {CoursesData.map(item=>item.id===2?
           <Switch>
-            <Route exact path="/course2/"><Main2/></Route>
-            <Route path="/course2/video2"><Video2/></Route>
-            <Route path="/course2/game2"><Game2/></Route>
-          </Switch>
+          <Route exact path={item.urlHome}><Main {...item}/></Route>
+          <Route path={item.urlVideo}><Video {...item}/></Route>
+          <Route path={item.urlGame}><Game {...item}/></Route>
+        </Switch>
+            :""
+          )}
        </div>
     )
 }
-
 export default Course2
