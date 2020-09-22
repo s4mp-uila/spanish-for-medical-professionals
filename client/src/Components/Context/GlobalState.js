@@ -1,4 +1,5 @@
-import React, {useState} from "react"
+import React, {useState,useEffect} from "react"
+import {useLocation} from "react-router-dom"
 const StateContext = React.createContext()
 
 function StateContextProvider(props) {
@@ -9,7 +10,9 @@ function StateContextProvider(props) {
     const [password, setPassword] = useState("")
     const [tempName, setTempName] = useState("")
     const [matching, setMatching] = useState(false)
-    
+
+    let location = useLocation()
+
     const CoursesData = [
         {
             id:1,
@@ -78,12 +81,17 @@ function StateContextProvider(props) {
         let existing = JSON.parse(localStorage.getItem("user"))
         if (existing !== null && existing.some(item=>item.email===email && item.password===password) ) {
             toggleLogin()
-        }
+        }else setMatching(true)
+
         existing.map(item=>item.email===email?setTempName(item.firstName):"")
         setEmail("")
         setPassword("")
         
     }
+
+    useEffect(() => {
+        setMatching(false)
+    }, [location])
 
     
     function Logout(event) {
