@@ -79,6 +79,7 @@ function StateContextProvider(props) {
         if (existing !== null && existing.some(item=>item.email===email && item.password===password) ) {
             toggleLogin()
         }
+        existing.map(item=>item.email===email?setTempName(item.firstName):"")
         setEmail("")
         setPassword("")
         
