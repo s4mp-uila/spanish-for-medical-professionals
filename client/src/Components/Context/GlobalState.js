@@ -10,6 +10,8 @@ function StateContextProvider(props) {
     const [password, setPassword] = useState("")
     const [tempName, setTempName] = useState("")
     const [matching, setMatching] = useState(false)
+    // const [selectedCourse, setSelectedCourse] = useState("")
+    
 
     let location = useLocation()
 
@@ -53,6 +55,8 @@ function StateContextProvider(props) {
     function toggleLogin() {
         setLogin(!login)
     }
+
+     
     
     function Save(event) {
         event.preventDefault()

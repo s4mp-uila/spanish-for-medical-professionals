@@ -7,9 +7,7 @@ import Home from "./Components/Home/Home"
 import Teacher from "./Components/Teacher/Teacher"
 import Login from "./Components/Login/Login"
 import LoginCheck from "./Components/LoginCheck/LoginCheck"
-import Course1 from "./Components/Courses/Course1/Course1"
-import Course2 from "./Components/Courses/Course2/Course2"
-import Course3 from "./Components/Courses/Course3/Course3"
+import CourseDetails from "./Components/Courses/CourseDetails"
 import {StateContext} from "./Components/Context/GlobalState"
 import './App.scss';
 
@@ -28,9 +26,9 @@ function App() {
         <Route path="/login"><Login /></Route>
         <Route path="/loginCheck"><LoginCheck /></Route>
         <Route path="/teacher"><Teacher /></Route>
-        <Route path="/course1">{login?<Course1 />:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
-        <Route path="/course2">{login?<Course2 />:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
-        <Route path="/course3">{login?<Course3 />:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
+        <Route path="/course1">{login?<CourseDetails courseId={1}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
+        <Route path="/course2">{login?<CourseDetails courseId={2}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
+        <Route path="/course3">{login?<CourseDetails courseId={3}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
       </Switch>
     </div>
   )
