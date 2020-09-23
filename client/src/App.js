@@ -14,7 +14,8 @@ import './App.scss';
 
 function App() {
 
-  const {login} = useContext(StateContext)
+  const {login, CoursesData} = useContext(StateContext)
+
 
   return (
     <div className="App">
@@ -26,9 +27,9 @@ function App() {
         <Route path="/login"><Login /></Route>
         <Route path="/loginCheck"><LoginCheck /></Route>
         <Route path="/teacher"><Teacher /></Route>
-        <Route path="/course1">{login?<CourseDetails courseId={1}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
-        <Route path="/course2">{login?<CourseDetails courseId={2}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
-        <Route path="/course3">{login?<CourseDetails courseId={3}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
+        {CoursesData.map(item=>
+          <Route path={item.urlHome}>{login?<CourseDetails courseId={item.id}/>:<h1 className="warningPerm">Please login first to be able using this Course</h1>}</Route>
+        )}
       </Switch>
     </div>
   )
