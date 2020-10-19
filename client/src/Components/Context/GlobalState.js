@@ -10,8 +10,28 @@ function StateContextProvider(props) {
     const [password, setPassword] = useState("")
     const [tempName, setTempName] = useState("")
     const [matching, setMatching] = useState(false)
+    let [match, setMatch] = useState([])
     // const [selectedCourse, setSelectedCourse] = useState("")
     
+
+    const words = [
+        {
+          "la bolsa de hielo": "ice pack",
+          "el médico": "doctor"
+        },
+        {
+          "la muleta": "crutch",
+          "la medicina" : "medicine" 
+        },
+        {
+          "el salpullido": "rash",
+          "alta presión sanguínea": "high blood pressure" 
+        },
+        {
+          "la cortada": "cut",
+          "el resfriado": "cold" 
+        }
+    ]
 
     let location = useLocation()
 
@@ -55,6 +75,32 @@ function StateContextProvider(props) {
     function toggleLogin() {
         setLogin(!login)
     }
+
+    let tableCells = document.querySelectorAll('td')
+
+    function ClickEvent(e) {
+        e.preventDefault()
+        let currentValue = e.currentTarget.innerHTML
+        setMatch(match.length < 2 ? [...match,currentValue] : []) 
+    }
+
+    useEffect(() => {
+        for(let i = 0; i < words.length; i++) {
+        Object.entries(words[i]).map(([key, value]) => match.includes(key)&&match.includes(value)?
+        Array.from(tableCells).find(item=> match.includes(item.innerHTML)?item.innerHTML=null:"")
+        :"")
+        }  
+    }, [match])
+
+    const wordsTable = words.map(item => 
+        <tr>
+        <td style = {{backgroundColor:"black"}}onClick={ClickEvent}>{Object.keys(item)[0]}</td>
+        <td style = {{backgroundColor:"red"}}onClick={ClickEvent}>{Object.values(item)[1]}</td>
+        <td style = {{backgroundColor:"black"}}onClick={ClickEvent}>{Object.keys(item)[1]}</td>
+        <td style = {{backgroundColor:"red"}}onClick={ClickEvent}>{Object.values(item)[0]}</td>
+        </tr> 
+
+    )
 
      
     
@@ -106,7 +152,7 @@ function StateContextProvider(props) {
 
     return (
         <StateContext.Provider value={{login, toggleLogin, user, tempName, firstName, email, password, 
-        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching,CoursesData}}>
+        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching,CoursesData,wordsTable}}>
             {props.children}
         </StateContext.Provider>
     )
