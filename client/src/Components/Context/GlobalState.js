@@ -10,29 +10,7 @@ function StateContextProvider(props) {
     const [password, setPassword] = useState("")
     const [tempName, setTempName] = useState("")
     const [matching, setMatching] = useState(false)
-    let [match, setMatch] = useState([])
-    // const [selectedCourse, setSelectedCourse] = useState("")
     
-
-    const words = [
-        {
-          "la bolsa de hielo": "ice pack",
-          "el médico": "doctor"
-        },
-        {
-          "la muleta": "crutch",
-          "la medicina" : "medicine" 
-        },
-        {
-          "el salpullido": "rash",
-          "alta presión sanguínea": "high blood pressure" 
-        },
-        {
-          "la cortada": "cut",
-          "el resfriado": "cold" 
-        }
-    ]
-
     let location = useLocation()
 
     const CoursesData = [
@@ -45,19 +23,39 @@ function StateContextProvider(props) {
             h3:"Learning Spanish with <b>SpanishForProfessionals</b> is entirely free. We are available for classroom or home with dozens of games, coloring pages and interactive activities ordered by levels that you can access anytime in tablets or desktops.",
             p:"After completion of each part, just click on the NEXT button to go forward",
             VideoSrc:"https://www.youtube.com/embed/t7-nb1wlnyA",
-            ImgSrc:"https://bit.ly/2QjsSnr"
+            ImgSrc:"https://bit.ly/2QjsSnr",
+            words: [
+                {
+                  "la bolsa de hielo": "ice pack",
+                  "el médico": "doctor"
+                },
+                {
+                  "la muleta": "crutch",
+                  "la medicina" : "medicine" 
+                },
+                {
+                  "el salpullido": "rash",
+                  "alta presión sanguínea": "high blood pressure" 
+                },
+                {
+                  "la cortada": "cut",
+                  "el resfriado": "cold" 
+                }
+                  ] 
         },
         {
             id:2,
             urlVideo:"/course2/video",
             urlGame:"/course2/game",
-            urlHome:"/course2/"
+            urlHome:"/course2/",
+            words:[]
         },
         {
             id:3,
             urlVideo:"/course3/video",
             urlGame:"/course3/game",
-            urlHome:"/course3/"
+            urlHome:"/course3/",
+            words:[]
         }
     ]
 
@@ -76,34 +74,6 @@ function StateContextProvider(props) {
         setLogin(!login)
     }
 
-    let tableCells = document.querySelectorAll('td')
-
-    function ClickEvent(e) {
-        e.preventDefault()
-        let currentValue = e.currentTarget.innerHTML
-        setMatch(match.length < 2 ? [...match,currentValue] : []) 
-    }
-
-    useEffect(() => {
-        for(let i = 0; i < words.length; i++) {
-        Object.entries(words[i]).map(([key, value]) => match.includes(key)&&match.includes(value)?
-        Array.from(tableCells).find(item=> match.includes(item.innerHTML)?item.innerHTML=null:"")
-        :"")
-        }  
-    }, [match])
-
-    const wordsTable = words.map(item => 
-        <tr>
-        <td style = {{backgroundColor:"black"}}onClick={ClickEvent}>{Object.keys(item)[0]}</td>
-        <td style = {{backgroundColor:"red"}}onClick={ClickEvent}>{Object.values(item)[1]}</td>
-        <td style = {{backgroundColor:"black"}}onClick={ClickEvent}>{Object.keys(item)[1]}</td>
-        <td style = {{backgroundColor:"red"}}onClick={ClickEvent}>{Object.values(item)[0]}</td>
-        </tr> 
-
-    )
-
-     
-    
     function Save(event) {
         event.preventDefault()
         
@@ -152,7 +122,7 @@ function StateContextProvider(props) {
 
     return (
         <StateContext.Provider value={{login, toggleLogin, user, tempName, firstName, email, password, 
-        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching,CoursesData,wordsTable}}>
+        handleChangeEmail, handleChangePassword,handleChangeFirstName, Save, Check, Logout, matching,CoursesData}}>
             {props.children}
         </StateContext.Provider>
     )
