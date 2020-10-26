@@ -41,21 +41,30 @@ function StateContextProvider(props) {
                   "la cortada": "cut",
                   "el resfriado": "cold" 
                 }
-                  ] 
+                  ],
+            translate:"",
+            word:[],
+            correct:"" 
         },
         {
             id:2,
             urlVideo:"/course2/video",
             urlGame:"/course2/game",
             urlHome:"/course2/",
-            words:[]
+            words:[],
+            translate:"Where is the restroom?",
+            word:["medico","esta","casa","donde","?","el","cocina","bano"],
+            correct:"donde esta el bano ?"
         },
         {
             id:3,
             urlVideo:"/course3/video",
             urlGame:"/course3/game",
             urlHome:"/course3/",
-            words:[]
+            words:[],
+            translate:"",
+            word:[],
+            correct:"" 
         }
     ]
 

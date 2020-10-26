@@ -130,6 +130,47 @@
       border: 1px solid black;
       border-radius: 5%;
     }
+    span {
+      position: relative;
+      margin: 0 5px;
+      padding: 10px;
+      border: 1px solid red;
+      border-radius: 9px;
+      background-color: red;
+      color: white;
+      &:hover {
+        top: -3px;
+        cursor: pointer;
+      }
+    }
+    .pickContainer {
+      margin: 70px 0;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+    .sandbox {
+      height: 100px;
+      width: 600px;
+      margin: auto;
+      border: 1px solid black;
+      border-radius: 9px;
+      padding: 20px 10px;
+    }
+    h2 {
+      color: red;
+    }
+    .succesMessage {
+      visibility: hidden;
+      color: rgb(21, 21, 22);
+      font-size: 90px;
+      padding: 0px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+    .reload {
+      background-color: red;
+      color: white;
+    }
   }
 
   iframe, img {
