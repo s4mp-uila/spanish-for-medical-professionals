@@ -48,7 +48,7 @@ function Game(props) {
     const [word, setWord] = useState(initialWord)
     const [check, setCheck] = useState([])
     const [solution, setSolution] = useState(false)
-    const pick = word.map(item => <span onClick={handleClick}>{item}</span>)
+    
     function handleClick(e) {
       setCheck([...check, e.target.innerHTML])
       setWord(word.filter(item=>item!==e.target.innerHTML))
