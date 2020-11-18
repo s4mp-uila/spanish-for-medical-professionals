@@ -94,6 +94,84 @@
       
     }
   }
+  .tableContainer {
+    table {
+      margin: auto;
+      margin-top: 124px;
+      margin-bottom: 125px;
+      width: 500px;
+      height: 500px;
+      padding: 25px;
+      td {
+        cursor: pointer;
+        color: white;
+        width: 70px;
+        height: 70px;
+        &:hover {
+          animation: shake 0.5s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes shake {
+          0% { transform: translate(1px, 1px) rotate(0deg); }
+          10% { transform: translate(-1px, -2px) rotate(-1deg); }
+          20% { transform: translate(-3px, 0px) rotate(1deg); }
+          30% { transform: translate(3px, 2px) rotate(0deg); }
+          40% { transform: translate(1px, -1px) rotate(1deg); }
+          50% { transform: translate(-1px, 2px) rotate(-1deg); }
+          60% { transform: translate(-3px, 1px) rotate(0deg); }
+          70% { transform: translate(3px, 1px) rotate(-1deg); }
+          80% { transform: translate(-1px, -1px) rotate(1deg); }
+          90% { transform: translate(1px, 2px) rotate(0deg); }
+          100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+      }
+    }
+    table, td {
+      border: 1px solid black;
+      border-radius: 5%;
+    }
+    span {
+      position: relative;
+      margin: 0 5px;
+      padding: 10px;
+      border: 1px solid red;
+      border-radius: 9px;
+      background-color: red;
+      color: white;
+      &:hover {
+        top: -3px;
+        cursor: pointer;
+      }
+    }
+    .pickContainer {
+      margin: 70px 0;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+    .sandbox {
+      height: 100px;
+      width: 600px;
+      margin: auto;
+      border: 1px solid black;
+      border-radius: 9px;
+      padding: 20px 10px;
+    }
+    h2 {
+      color: red;
+    }
+    .succesMessage {
+      visibility: hidden;
+      color: rgb(21, 21, 22);
+      font-size: 90px;
+      padding: 0px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+    .reload {
+      background-color: red;
+      color: white;
+    }
+  }
 
   iframe, img {
     display: block;
@@ -108,4 +186,5 @@
 
 
 }
+
 

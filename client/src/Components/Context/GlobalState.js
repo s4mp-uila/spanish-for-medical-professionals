@@ -10,9 +10,7 @@ function StateContextProvider(props) {
     const [password, setPassword] = useState("")
     const [tempName, setTempName] = useState("")
     const [matching, setMatching] = useState(false)
-    // const [selectedCourse, setSelectedCourse] = useState("")
     
-
     let location = useLocation()
 
     const CoursesData = [
@@ -25,19 +23,48 @@ function StateContextProvider(props) {
             h3:"Learning Spanish with <b>SpanishForProfessionals</b> is entirely free. We are available for classroom or home with dozens of games, coloring pages and interactive activities ordered by levels that you can access anytime in tablets or desktops.",
             p:"After completion of each part, just click on the NEXT button to go forward",
             VideoSrc:"https://www.youtube.com/embed/t7-nb1wlnyA",
-            ImgSrc:"https://bit.ly/2QjsSnr"
+            ImgSrc:"https://bit.ly/2QjsSnr",
+            words: [
+                {
+                  "la bolsa de hielo": "ice pack",
+                  "el médico": "doctor"
+                },
+                {
+                  "la muleta": "crutch",
+                  "la medicina" : "medicine" 
+                },
+                {
+                  "el salpullido": "rash",
+                  "alta presión sanguínea": "high blood pressure" 
+                },
+                {
+                  "la cortada": "cut",
+                  "el resfriado": "cold" 
+                }
+                  ],
+            translate:"",
+            word:[],
+            correct:"" 
         },
         {
             id:2,
             urlVideo:"/course2/video",
             urlGame:"/course2/game",
-            urlHome:"/course2/"
+            urlHome:"/course2/",
+            words:[],
+            translate:"Where is the restroom?",
+            word:["medico","esta","casa","donde","?","el","cocina","bano"],
+            correct:"donde esta el bano ?"
         },
         {
             id:3,
             urlVideo:"/course3/video",
             urlGame:"/course3/game",
-            urlHome:"/course3/"
+            urlHome:"/course3/",
+            words:[],
+            translate:"",
+            word:[],
+            correct:"" 
         }
     ]
 
@@ -56,8 +83,6 @@ function StateContextProvider(props) {
         setLogin(!login)
     }
 
-     
-    
     function Save(event) {
         event.preventDefault()
         
