@@ -20,7 +20,7 @@ function StateContextProvider(props) {
             urlGame:"/course1/game",
             urlHome:"/course1/",
             h1:"SpanishForProfessionals",
-            h3:"Learning Spanish with <b>SpanishForProfessionals</b> is entirely free. We are available for classroom or home with dozens of games, coloring pages and interactive activities ordered by levels that you can access anytime in tablets or desktops.",
+            h3:"Learning Spanish with SpanishForProfessionals is entirely free. We are available for classroom or home with dozens of games, coloring pages and interactive activities ordered by levels that you can access anytime in tablets or desktops.",
             p:"After completion of each part, just click on the NEXT button to go forward",
             VideoSrc:"https://www.youtube.com/embed/t7-nb1wlnyA",
             ImgSrc:"https://bit.ly/2QjsSnr",
