@@ -176,6 +176,12 @@
       margin: 70px 0;
       height: 20px;
       margin-bottom: 10px;
+      span {
+        @media screen and (max-width: $medium) {
+          display: inline-block;
+          margin: 5px;
+        }
+      }
     }
     .sandbox {
       height: 100px;
