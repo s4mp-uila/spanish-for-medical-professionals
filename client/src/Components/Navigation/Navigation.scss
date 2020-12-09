@@ -1,13 +1,24 @@
+@import "../../index";
+
 nav {
     display: grid;
     grid-template-columns: 35% 10% 10% 10% 25% 10%;
     text-align: center;
     margin: 2%;
+    @media screen and (max-width: $large) {
+        grid-template-columns: repeat(6, 16%)
+      }
     a {
         text-decoration: none;
         color: black;
         font-size: larger;
         font-weight: 400;
+        @media screen and (max-width: $huge) {
+            font-size: 16px;
+          }
+        @media screen and (max-width: $medium) {
+            font-size: 14px;
+          }
         &:hover {
             color: white;
             text-shadow: 2px 2px 4px #000000;
